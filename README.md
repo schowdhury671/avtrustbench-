@@ -7,7 +7,7 @@
 
 <div align="center">
   
-<b>_<sup>1*</sup> [Sanjoy Chowdhury](https://schowdhury671.github.io/), <sup>2,3*</sup> [Sayan Nag](https://sayannag.github.io/), <sup>4</sup> [Subhrajyoti Dasgupta](https://subhrajyotidasgupta.github.io/), <sup>5</sup>[Yaoting Wang](https://github.com/schowdhury671/avtrustbench-/),_</b>
+<b>_<sup>1*</sup> [Sanjoy Chowdhury](https://schowdhury671.github.io/), <sup>2,3*</sup> [Sayan Nag](https://sayannag.github.io/), <sup>4</sup> [Subhrajyoti Dasgupta](https://subhrajyotidasgupta.github.io/), <sup>5</sup> [Yaoting Wang](https://github.com/schowdhury671/avtrustbench-/),_</b>
 
 **_<sup>5</sup> [Mohamed Elhoseiny](https://www.mohamed-elhoseiny.com/), <sup>1</sup> [Ruohan Gao](https://ruohangao.github.io/), <sup>1</sup> [Dinesh Manocha](https://www.cs.umd.edu/people/dmanocha/)_**
 
