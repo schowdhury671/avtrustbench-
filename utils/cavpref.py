@@ -4,7 +4,7 @@ import torch.nn as nn
 import transformers
 
 class CAVPref(nn.Module):
-    def __init__(self, lambbas = {"T":1.0, "V": 1.0, "A": 0.8}):
+    def __init__(self, lambdas = {"T":1.0, "V": 1.0, "A": 0.8}):
         self.lambdas = lambdas
         self.eta = {"MCIT": 0, "ICIT": 0, "MVIT": 1, "MAIT": 0, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 1, "MAT": 0}
         self.gamma = {"MCIT": 0, "ICIT": 0, "MVIT": 0, "MAIT": 1, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 0, "MAT": 1}
@@ -21,7 +21,7 @@ class CAVPref(nn.Module):
         delta = winning_logprobs - losing_logprobs
         return F.logsigmoid(beta * delta)
 
-    def return_preference_loss(self, avllm, T, V, A, betas = {"T": 0.1, "V": 0.1, "A": 0.1}, task_name = "MCIT")
+    def return_preference_loss(self, avllm, T, V, A, betas = {"T": 0.1, "V": 0.1, "A": 0.1}, task_name = "MCIT"):
 
         # Obtain the tuples of (T["winning"], T["losing"]), (V["winning"], V["losing"]), (A["winning"], A["losing"]) from the batch tokenizer
         # T["winning"] (or T["losing"]) consists of input_ids, attention_masks, labels
@@ -35,7 +35,7 @@ class CAVPref(nn.Module):
 
         if self.eta[task_name] != 0:
             winning_visual_logprobs = self.return_log_probs(avllm, inputs={'text': T["winning"], 'visual': V["winning"], 'audio': A["winning"]})
-            losing_visual_logprobs = return_log_probs(avllm, inputs={'text': T["winning"], 'visual': V["losing"], 'audio': A["winning"]})
+            losing_visual_logprobs = self.return_log_probs(avllm, inputs={'text': T["winning"], 'visual': V["losing"], 'audio': A["winning"]})
             loss_visual = - self.lambdas["V"] * torch.log(torch.mean(torch.exp(self.return_sigmoids(winning_visual_logprobs, losing_visual_logprobs, beta=betas["V"]) / self.lambdas["V"])))
             loss = loss + self.eta[task_name] * loss_visual
 
