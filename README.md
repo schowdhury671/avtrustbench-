@@ -1,5 +1,6 @@
 <div align="center">
   <h1>AVTrustBench: Assessing and Enhancing Reliability and Robustness in Audio-Visual LLMs</h1>
+  <h2><i>(Accepted to ICCV 2025)</i></h2>
 </div>
   
 <!-- **Authors:** -->
@@ -28,7 +29,7 @@ We further propose a new model-agnostic calibrated audio-visual preference optim
 ## Table of Contents 📚
 
 - [AVTrustBench Statistics and AVLLMs Leaderboard](#avtrustbench-statistics-and-avllms-leaderboard-)
-- [AVTrustBench Task Examples](#avtrustbench-task-examples)
+- [AVTrustBench Task Examples](#avtrustbench-task-examples-)
 - [CAVPref Usage](#usage)
 - [Dataset](#dataset-)
 - [Results](#results-)
