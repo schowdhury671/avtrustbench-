@@ -15,6 +15,7 @@
 _<sup>1</sup> University of Maryland, <sup>2</sup> University of Toronto, <sup>3</sup> Adobe Research, <sup>4</sup> Mila and Université de Montréal, <sup>5</sup> KAUST_
 </div>
 
+## TL;DR
 We introduce **AVTrustBench** — a comprehensive 600K-sample benchmark 📊 evaluating AVLLMs on adversarial attacks 🛡️⚔️, compositional reasoning 🧩🧠, and modality-specific dependencies 🎧👁️.
 
 We further propose a new model-agnostic calibrated audio-visual preference optimization-based training strategy, **CAVPref**, that improves the performance of existing AVLLMs by up to _30.19%_ 🚀📈.
