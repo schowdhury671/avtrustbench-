@@ -5,10 +5,10 @@ import transformers
 
 class CAVPref(nn.Module):
     def __init__(self, lambdas = {"T":1.0, "V": 1.0, "A": 0.8}):
+        super(CAVPref, self).__init__(lambdas)
         self.lambdas = lambdas
         self.eta = {"MCIT": 0, "ICIT": 0, "MVIT": 1, "MAIT": 0, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 1, "MAT": 0}
         self.gamma = {"MCIT": 0, "ICIT": 0, "MVIT": 0, "MAIT": 1, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 0, "MAT": 1}
-        super(CAVPref, self).__init__(lambdas)
 
     def return_log_probs(self, avllm, inputs):
         output_logits = avllm(inputs).logits.to(torch.float32)
