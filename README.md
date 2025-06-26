@@ -86,7 +86,7 @@ First, make sure you have your audio–visual LLM and data batches ready:
    V_batch = { "winning": vision_tensors_win, "losing": vision_tensors_loss }
    A_batch = { "winning": audio_tensors_win,  "losing": audio_tensors_loss }
 
-   loss = cavpref.return_preference_loss(
+   loss = cavpref(
        avllm, 
        T=T_batch, 
        V=V_batch, 
