@@ -8,6 +8,7 @@ class CAVPref(nn.Module):
         self.lambdas = lambdas
         self.eta = {"MCIT": 0, "ICIT": 0, "MVIT": 1, "MAIT": 0, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 1, "MAT": 0}
         self.gamma = {"MCIT": 0, "ICIT": 0, "MVIT": 0, "MAIT": 1, "COT-Stitch": 0, "COT-Swap": 1, "CAT": 0, "MVT": 0, "MAT": 1}
+        super(CAVPref, self).__init__(lambdas)
 
     def return_log_probs(self, avllm, inputs):
         output_logits = avllm(inputs).logits.to(torch.float32)
@@ -21,7 +22,7 @@ class CAVPref(nn.Module):
         delta = winning_logprobs - losing_logprobs
         return F.logsigmoid(beta * delta)
 
-    def return_preference_loss(self, avllm, T, V, A, betas = {"T": 0.1, "V": 0.1, "A": 0.1}, task_name = "MCIT"):
+    def forward(self, avllm, T, V, A, betas = {"T": 0.1, "V": 0.1, "A": 0.1}, task_name = "MCIT"):
 
         # Obtain the tuples of (T["winning"], T["losing"]), (V["winning"], V["losing"]), (A["winning"], A["losing"]) from the batch tokenizer
         # T["winning"] (or T["losing"]) consists of input_ids, attention_masks, labels
