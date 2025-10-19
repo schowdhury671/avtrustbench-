@@ -54,6 +54,7 @@ We further propose a new model-agnostic calibrated audio-visual preference optim
 </div>
 
 ### Usage
+#### CAVPref
 CAVPref module has been designed to be utilized with your AVLLM. Here’s an example **CAVPref** usage:
 
 First, make sure you have your audio–visual LLM and data batches ready:
@@ -106,6 +107,12 @@ First, make sure you have your audio–visual LLM and data batches ready:
 For more details, see the implementation of `utils/cavpref.py`.
 
 
+#### Data Generator
+1. The `datagen.py` script expects the directory where the downloaded and cropped videos are stored. This can be configured in the `DATA_DIR` variable of the script.
+2. Configure the tasks in the `main()` of `datagen.py` as required.
+3. Run the script.
+
+For more details, refer to the `datagen.py` script.
 
 ## Dataset 📁
 
