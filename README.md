@@ -133,8 +133,7 @@ For more details, refer to the `datagen.py` script.
 - [x] CAVPref Module and Example Usage
 - [x] AVTrustBench Construction
 - [x] AVTrustBench Upload
-- [ ] Add AVTrustBench-test
-- [ ] Add AVTrustBench dataset details
+- [x] Add AVTrustBench-10K
 
 
 
